@@ -60,7 +60,7 @@ Solder the ADS1256 module onto the top of the board, lined up with the footprint
 
 ### 3. Solder JST connectors
 
-Same deal, solder the connectors as annotated on the PCB.
+Same deal, solder the connectors as marked on the PCB.
 
 ### 4. Bridge solder jumpers
 
@@ -96,7 +96,11 @@ To use two boards at the same time, they will need to have separate data lines. 
 
 ## Software
 
-To use the ADS1256, find an applicable library, modifying it as needed. For example, you could clone [this repo for Waveshare boards](https://github.com/waveshareteam/High-Precision-AD-DA-Board/tree/master/RaspberryPI/ADS1256/python3) and modify `config.py` with the applicable pin numbers. Good luck!
+To use the ADS1256, find an applicable library, modifying it as needed. For example, you could clone [this repo for Waveshare boards](https://github.com/waveshareteam/High-Precision-AD-DA-Board/tree/master/RaspberryPI/ADS1256/python3) and modify `config.py` with the applicable pin numbers.
+
+One issue you may run into is the fact that the board uses the hardware CS pin, which is often claimed by the SPI system, so it can't be used as a GPIO output. Since most ADS1256 libraries will manually set the CS pin, you will need to free up the pin to be used as an output. This can be done by changing the SPI device tree overlay to one which doesn't use the CS pin, such as `spi0-0cs`. To do this, add the line `dtoverlay=spi0-0cs` to `/boot/config.txt`, removing any conflicting dtoverlays if necessary.
+
+Good luck!
 
 ## Pictures
 
