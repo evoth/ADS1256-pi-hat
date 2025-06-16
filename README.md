@@ -97,3 +97,9 @@ To use two boards at the same time, they will need to have separate data lines. 
 ## Software
 
 To use the ADS1256, find an applicable library, modifying it as needed. For example, you could clone [this repo for Waveshare boards](https://github.com/waveshareteam/High-Precision-AD-DA-Board/tree/master/RaspberryPI/ADS1256/python3) and modify `config.py` with the applicable pin numbers. Good luck!
+
+## Pictures
+
+[![Front side of PCB](/images/PCB_front.jpg)](/images/PCB_front.jpg)
+[![Back side of PCB](/images/PCB_back.jpg)](/images/PCB_back.jpg)
+[![Fully assembled PCB with Pi](/images/fully_assembled.jpg)](/images/fully_assembled.jpg)
